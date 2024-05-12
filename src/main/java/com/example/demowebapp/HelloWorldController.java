@@ -10,8 +10,11 @@ public class HelloWorldController {
         return "Hello World!";
     }
 
-    @GetMapping(path = "/ciaov")
-    public String ciaov(@RequestParam(required = true) String nome, @RequestParam(required = false, defaultValue = "") String cognome) {
-        return "Ciao " + nome + " " + cognome + "!";
+    @GetMapping(path = "/ciaov/{id}")
+    public User ciaov(
+            @PathVariable long id,
+            @RequestParam(required = true) String nome,
+            @RequestParam(required = false, defaultValue = "") String cognome) {
+        return new User(id, nome, cognome);
     }
 }
