@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1")
 public class NomeProvinciaController {
     @RequestMapping(method = RequestMethod.GET, path = "/ciao1")
-    public String ciao1(@RequestParam String nome, @RequestParam String provincia) {
+    public String ciao(@RequestParam String nome, @RequestParam String provincia) {
         return "Ciao " + nome + ", com'è il tempo in " + provincia;
     }
 }
